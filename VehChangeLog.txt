@@ -1,0 +1,9 @@
+// New Spawn Class:
+amphicar = Wheeled Titanic
+pragaCopter_green, pragaCopter_yellow = Praga copter (Green / Yellow)
+bigRaft = Raft
+smallRaft = Small Raft
+scrapTank = Scrap APC
+ScrapBuggy = Scrap Buggy
+p85_cucv = M1018
+p85_cucv_pickup = M1018 Pickup

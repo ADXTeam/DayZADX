@@ -1,0 +1,1 @@
+start Expansion\beta\arma2oa.exe -mod=@ADX_Podagorsk -beta=Expansion\beta;Expansion\beta\Expansion -nosplash -showScriptErrors -world=empty
