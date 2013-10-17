@@ -1,0 +1,43 @@
+showcinemaborder false
+titlecut ["", "black in", 5]
+
+_camera = "camera" camCreate [11872.27,108026.29,-1604.00]
+_camera cameraEffect ["internal", "back"]
+1 SetOvercast 1
+1 SetFog 0.98
+0 SetRain 0
+#loop
+;=== 23:04:01
+_camera camPrepareTarget [11872.27,108026.29,-1604.00]
+_camera camPreparePos [11873.58,8039.46,0.82]
+_camera camPrepareFOV 0.700
+_camera camCommitPrepared 0
+@camCommitted _camera
+
+~5
+
+;=== 23:04:25
+_camera camPrepareTarget [33515.60,105674.16,-1570.67]
+_camera camPreparePos [11873.12,8058.79,1.43]
+_camera camPrepareFOV 0.700
+_camera camCommitPrepared 60
+@camCommitted _camera
+
+~1
+
+;=== 23:04:41
+_camera camPrepareTarget [33515.60,105674.16,-1570.67]
+_camera camPreparePos [11881.33,8095.93,1.49]
+_camera camPrepareFOV 0.700
+_camera camCommitPrepared 60
+@camCommitted _camera
+
+~5
+
+goto "loop"
+
+;exit
+_camera cameraEffect ["terminate","back"]
+camDestroy _camera
+
+exit

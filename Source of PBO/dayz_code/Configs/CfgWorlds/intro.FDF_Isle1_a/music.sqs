@@ -1,0 +1,8 @@
+0 fademusic 1
+0 fadesound 1
+#loop
+playMusic "Track18_Ghost_Waltz"
+~120
+goto "loop"
+
+exit

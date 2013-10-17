@@ -1,0 +1,203 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"fdf_isle1_a",
+		"ca_modules_animals",
+		"dayz_anim",
+		"dayz_code",
+		"dayz_communityassets",
+		"dayz_weapons",
+		"dayz_equip"		
+	};
+	addOnsAuto[]=
+	{
+		"dayz_weapons",
+		"fdf_isle1_a"
+	};
+	randomSeed=11171215;
+	class Intel
+	{
+		briefingName="DayZ Podagorsk";
+		briefingDescription="DayZ American Day X Podagorsk";
+		startWeather=0.067362607;
+		forecastWeather=0.52341133;
+		year=2008;
+		month=10;
+		day=1;
+		hour=12;
+	};
+	class Groups
+	{
+		items=2;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={11960.811,0,10331.904};
+					azimut=-17.0839;
+					id=11;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item1
+				{
+					position[]={11960.811,0,10331.904};
+					azimut=-17.0839;
+					id=0;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={708.96582,35.858719,3533.1272};
+					id=50;
+					side="LOGIC";
+					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=8;
+		class Item0
+		{
+			position[]={10009.84,0,10523.813};
+			name="center";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={8230.2422,0,21341.453};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={11898.466,0,10352.769};
+			name="spawn0"; //spawn_balota //spawn_protvino
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={7692.3657,0,11075.63};
+			name="spawn1"; //spawn_kamenka //spawn_berezniki
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={8815.4287,0,8077.0435};
+			name="spawn2"; //spawn_cherno //spawn_zirnitra
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={10942.158,0,7126.9946};
+			name="spawn3"; //spawn_elektro //spawn_kovrov
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={8331.4277,0,9179.1523};
+			name="spawn4"; //spawn_sol //spawn_kirsanov
+			type="Empty";
+		};
+		class Item7
+		{
+			position[]={11765.732,0,8088.3228};
+			name="spawn5"; //spawn_berezino //spawn_tobolsk
+			type="Empty";
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"fdf_isle1_a"
+	};
+	addOnsAuto[]=
+	{
+		"fdf_isle1_a"
+	};
+	randomSeed=6913869;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"fdf_isle1_a"
+	};
+	addOnsAuto[]=
+	{
+		"fdf_isle1_a"
+	};
+	randomSeed=4081731;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"fdf_isle1_a"
+	};
+	addOnsAuto[]=
+	{
+		"fdf_isle1_a"
+	};
+	randomSeed=4975929;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
