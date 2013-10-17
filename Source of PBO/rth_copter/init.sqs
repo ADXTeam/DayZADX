@@ -1,0 +1,5 @@
+_car = _this select 0
+
+[_car] exec "\rth_copter\waitdestroy.sqs"
+
+exit

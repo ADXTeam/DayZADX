@@ -1,0 +1,7 @@
+_car = _this select 0
+
+@getDammage _car > 0.7
+
+[_car] exec "\rth_copter\destroy.sqs"
+
+exit

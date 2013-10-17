@@ -1,0 +1,34 @@
+_car = _this select 0
+
+_pos = getpos _car
+_dir = getDir _car
+_vel = Velocity _car
+_driver = driver _car
+moveout _driver
+_crew = crew _car
+_type = typeof _car
+
+deleteVehicle _car
+
+_crtype = "rth_copter_wreck"
+
+_car = _crtype createVehicle _pos
+_car setFuel 0
+_car setAmmoCargo 0
+
+_car setDir _dir
+_car setPos _pos
+
+{ _x moveIncargo _car } foreach _crew
+_driver moveindriver _car
+
+_car setVelocity _vel
+
+_velx = (_vel select 0) + (random(20)-10)
+_vely = (_vel select 1) + (random(20)-10)
+_velz = (_vel select 2) + random(20)
+
+[_driver] orderGetIn false
+_crew orderGetIn false
+
+exit
