@@ -23,6 +23,7 @@ class RscIGUIListBox;
 class RscHTML;
 class RscCombo;
 
+
 #include "CfgPlayerStats\defines.hpp"
 #include "CfgPlayerStats\p__cover.hpp"
 #include "CfgPlayerStats\p_journal_humanity.hpp"
