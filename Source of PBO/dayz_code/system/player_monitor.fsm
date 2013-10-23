@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "D:\Programme\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Monitor">*/
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Monitor">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"init"};
@@ -18,9 +18,9 @@ item13[] = {"Parse_Login",2,250,-75.000000,500.000000,25.000000,550.000000,0.000
 item14[] = {"Hive_Bad",4,218,125.000000,500.000000,225.000000,550.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,500.000000,425.000000,550.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
 item16[] = {"Hive_Ok",4,218,-175.000000,550.000000,-75.000000,600.000000,0.000000,"Hive" \n "Ok"};
-item17[] = {"Phase_One",2,4346,-75.000000,600.000000,25.000000,650.000000,0.000000,"Phase One"};
+item17[] = {"Phase_One",2,250,-75.000000,600.000000,25.000000,650.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,650.000000,-75.000000,700.000000,0.000000,"Response"};
-item19[] = {"Phase_Two",2,250,-75.000000,700.000000,25.000000,750.000000,0.000000,"Phase Two"};
+item19[] = {"Phase_Two",2,4346,-75.000000,700.000000,25.000000,750.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,700.000000,225.000000,750.000000,0.000000,"Dead" \n "Player"};
 item21[] = {"ERROR__Player_Already",2,250,325.000000,700.000000,425.000000,750.000000,0.000000,"ERROR:" \n "Player Already" \n "Dead"};
 item22[] = {"Alive",4,218,-175.000000,750.000000,-75.000000,800.000000,0.000000,"Alive"};
@@ -179,8 +179,8 @@ link90[] = {80,78};
 link91[] = {81,82};
 link92[] = {82,83};
 link93[] = {83,50};
-globals[] = {25.000000,1,0,0,0,640,480,1,209,6316128,1,-340.788116,439.274902,1230.212158,467.786713,973,951,1};
-window[] = {2,-1,-1,-1,-1,805,1945,3317,25,3,991};
+globals[] = {25.000000,1,0,0,0,640,480,1,209,6316128,1,-271.427032,369.913269,1046.201050,524.237244,779,634,1};
+window[] = {0,-1,-1,-1,-1,958,-45,1327,178,1,797};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -672,7 +672,24 @@ class FSM
        "	_rndmags = getArray (_config >> ""RandomPossibilitieMagazines"");" \n
        "	_countmags = 0; " \n
        "	_gmags = getArray (_config >> ""GuaranteedMagazines"");" \n
+       "	/*old spawn weapons" \n
        "	_wpns = getArray (_config >> ""weapons"");" \n
+       "	*/" \n
+       "	/* New Spawn Weapons */" \n
+       "	_totalrndwpns = getNumber (_config >> ""RandomWeapons"");" \n
+       "	_totalrndm_wpns = getNumber (_config >> ""RandomM_Weapons"");" \n
+       "	_totalrndwmags = getNumber (_config >> ""RandomWMagazines"");" \n
+       "	_totalrndm_wmags = getNumber (_config >> ""RandomM_WMagazines"");" \n
+       "	_rndwpns = getArray (_config >> ""RandomPossibilitieWeapons"");" \n
+       "	_rndm_wpns = getArray (_config >> ""RandomPossibilitieM_Weapons"");" \n
+       "	_rndwmags = getArray (_config >> ""RandomPossibilitieWMagazines"");" \n
+       "	_rndm_wmags = getArray (_config >> ""RandomPossibilitieM_WMagazines"");" \n
+       "	_countwpns = 0;" \n
+       "	_countm_wpns = 0;" \n
+       "	_countwmags = 0;" \n
+       "	_countm_wmags = 0;" \n
+       "" \n
+       "	" \n
        "	_bcpk = getText (_config >> ""backpack"");" \n
        "	_bcpkWpn = getText (_config >> ""backpackWeapon"");" \n
        "	" \n
@@ -691,6 +708,42 @@ class FSM
        "		if (_isOK) then {" \n
        "			player addMagazine _rndmag;" \n
        "			_countmags = _countmags  +1;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	while {_countwmags < _totalrndwmags} do {" \n
+       "		_rndwmags = _rndwmags call BIS_fnc_selectRandom;" \n
+       "		_isOK = 	isClass(configFile >> ""CfgMagazines"" >> _rndwmags);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _rndwmags;" \n
+       "			_countwmags = _countwmags  +1;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	while {_countm_wmags < _totalrndm_wmags} do {" \n
+       "		_rndm_wmags = _rndm_wmags call BIS_fnc_selectRandom;" \n
+       "		_isOK = 	isClass(configFile >> ""CfgMagazines"" >> _rndm_wmags);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _rndm_wmags;" \n
+       "			_countm_wmags = _countm_wmags  +1;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	while {_countwpns < _totalrndwpns} do {" \n
+       "		_rndwpns = _rndwpns call BIS_fnc_selectRandom;" \n
+       "		_isOK = 	isClass(configFile >> ""CfgWeapons"" >> _rndwpns);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _rndwpns;" \n
+       "			_countwpns = _countwpns  +1;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	while {_countm_wpns < _totalrndm_wpns} do {" \n
+       "		_rndm_wpns = _rndwpns call BIS_fnc_selectRandom;" \n
+       "		_isOK = 	isClass(configFile >> ""CfgWeapons"" >> _rndm_wpns);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _rndm_wpns;" \n
+       "			_countm_wpns = _countm_wpns  +1;" \n
        "		};" \n
        "	};" \n
        "" \n

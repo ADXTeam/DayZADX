@@ -185,7 +185,7 @@ class CfgMissions
 	 {
 	  class DayZModIntro1
 		  {
-			directory = "z\addons\dayz_code\Configs\CfgWorlds\intro.dayzmod";
+			directory = "z\addons\dayz_code\Configs\CfgWorlds\intro.FDF_Isle1_a";
 		  };
 	 };
 };
@@ -193,11 +193,20 @@ class CfgMissions
 class CfgSurvival {
 	class Inventory {
 		class Default {
-			RandomMagazines = 3;
+			RandomMagazines = 1;
+			RandomWMagazines = 2;
+			RandomM_WMagazines = 2;
+			RandomWeapons = 1;
+			RandomM_Weapons = 1;
+			RandomBackpacks = 1;
+			RandomPossibilitieWeapons[] = {"Winchester1866","Remington870_lamp","huntingrifle"};
+			RandomPossibilitieM_Weapons[] = {"Makarov","MakarovSD","revolver_EP1"};
 			GuaranteedMagazines[] = {"ItemBandage","HandRoadFlare"};
 			RandomPossibilitieMagazines[] = {"ItemBandage","ItemPainkiller"};
+			RandomPossibilitieWMagazines[] = {"15Rnd_W1866_Slug","8Rnd_B_Beneli_74Slug","5x_22_LR_17_HMR"};
+			RandomPossibilitieM_WMagazines[] = {"6Rnd_45ACP","8Rnd_9x18_Makarov","8Rnd_9x18_MakarovSD"};
 			backpackWeapon = "";
-			//backpack = "DZ_Patrol_Pack_EP1";
+			//RandomPossibilitieBackpack[] = {"DZ_Patrol_Pack_EP1"};
 		};
 	};
 	class Meat {
