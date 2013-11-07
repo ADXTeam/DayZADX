@@ -80,7 +80,24 @@ if (!isDedicated) then {
 	player_switchWeapon = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_switchWeapon.sqf";
 	player_goFishing =	compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_goFishing.sqf";
 	player_gather =	compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_gather.sqf";
-
+	/*--------------------------------*/
+	player_bbstart = 			compile preprocessFileLineNumbers "\z\addons\adx_code\actions\bse_pp.sqf";
+	player_ppver =				compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_ppver.sqf";
+        player_chopWood =			compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_chopWood.sqf";
+        player_useMeds =                        compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_useMeds.sqf";
+        player_wearClothes =                    compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_wearClothes.sqf";
+        fnc_usec_selfActions =                  compile preprocessFileLineNumbers "\z\addons\adx_code\compile\fn_selfActions.sqf";
+        player_humanityMorph =                  compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_humanityMorph.sqf";
+        player_music =                          compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_music.sqf";
+        player_switchModel =                    compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_switchModel.sqf";
+        player_updateGui =                      compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_updateGui.sqf";
+        //System
+	player_monitor =                        compile preprocessFileLineNumbers "\z\addons\adx_code\system\player_monitor.sqf";
+	player_spawn_1 =                        compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_spawn_1.sqf";
+	player_spawn_2 =                        compile preprocessFileLineNumbers "\z\addons\adx_code\system\player_spawn_2.sqf";
+        
+        fnc_transf =                            compile preprocessFileLineNumbers "\z\addons\adx_code\actions\transf.sqf";
+        /*--------------------------------*/
 	//ui
 	player_selectSlot = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\ui_selectSlot.sqf";
 	player_gearSet = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_gearSet.sqf";
@@ -97,27 +114,8 @@ if (!isDedicated) then {
 
 	//System
 	//player_monitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_monitor.sqf";
-	//player_spawn_1 = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_spawn_1.sqf";
+	player_spawn_1 = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_spawn_1.sqf";
 	//player_spawn_2 = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_spawn_2.sqf";
-        
-        /*--------------------------------*/
-	player_bbstart = 			compile preprocessFileLineNumbers "\z\addons\adx_code\actions\bse_pp.sqf";
-	player_ppver =				compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_ppver.sqf";
-        player_chopWood =			compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_chopWood.sqf";
-        player_useMeds =                        compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_useMeds.sqf";
-        player_wearClothes =                    compile preprocessFileLineNumbers "\z\addons\adx_code\actions\player_wearClothes.sqf";
-        fnc_usec_selfActions =                  compile preprocessFileLineNumbers "\z\addons\adx_code\compile\fn_selfActions.sqf";
-        player_humanityMorph =                  compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_humanityMorph.sqf";
-        player_music =                          compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_music.sqf";
-        player_switchModel =                    compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_switchModel.sqf";
-        player_updateGui =                      compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_updateGui.sqf";
-        //System
-	player_monitor =                        compile preprocessFileLineNumbers "\z\addons\adx_code\system\player_monitor.sqf";
-	player_spawn_1 =                        compile preprocessFileLineNumbers "\z\addons\adx_code\system\player_spawn_1.sqf";
-	player_spawn_2 =                        compile preprocessFileLineNumbers "\z\addons\adx_code\system\player_spawn_2.sqf";
-        
-        fnc_transf =                            compile preprocessFileLineNumbers "\z\addons\adx_code\actions\transf.sqf";
-        /*--------------------------------*/
 	onPreloadStarted "dayz_preloadFinished = false;";
 	onPreloadFinished "dayz_preloadFinished = true;";
 	infectedcamps = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_infectedcamps.sqf";
@@ -556,13 +554,11 @@ if (!isDedicated) then {
 	//player_humanityChange = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_humanityChange.sqf";
 	spawn_loot = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\spawn_loot.sqf";
 	player_projectileNear = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_projectileNear.sqf";
-        
-        
-                /*--------------------------*/
-        player_humanityChange =         compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_humanityChange.sqf";
-        fnc_veh_handleDam =             compile preprocessFileLineNumbers "\z\addons\adx_code\compile\veh_handleDam.sqf";
-        fnc_veh_handleRepair =          compile preprocessFileLineNumbers "\z\addons\adx_code\compile\veh_handleRepair.sqf";
-        
+        /*--------------------------*/
+    player_humanityChange =         compile preprocessFileLineNumbers "\z\addons\adx_code\compile\player_humanityChange.sqf";
+    fnc_veh_handleDam =             compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\veh_handleDam.sqf";
+    fnc_veh_handleRepair =          compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\veh_handleRepair.sqf";
+        /*--------------------------*/    
 	call compile preprocessFileLineNumbers "\z\addons\dayz_code\traps\init.sqf";
 
 	player_sumMedical = {
